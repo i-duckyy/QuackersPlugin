@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.quackers.plugin.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "meteor.GuiRendererAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

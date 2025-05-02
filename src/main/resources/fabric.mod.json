@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "quackers-plugin",
+  "version": "${version}",
+  "name": "Quackers Plugin",
+  "description": "Official quackers plugin :O",
+  "authors": [
+    "iDucky__"
+  ],
+  "icon": "assets/template/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "meteor": [
+      "com.quackers.plugin.QuackersPlugin"
+    ]
+  },
+  "mixins": [
+    "quackers.mixins.json"
+  ],
+  "custom": {
+    "meteor-client:color": "255,200,0"
+  },
+  "depends": {
+    "java": ">=21",
+    "minecraft": ["${mc_version}"],
+    "meteor-client": "*"
+  }
+}

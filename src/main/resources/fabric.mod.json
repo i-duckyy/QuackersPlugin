@@ -7,7 +7,7 @@
   "authors": [
     "iDucky__"
   ],
-  "icon": "assets/template/icon.png",
+  "icon": "assets/quackers/icon.png",
   "environment": "client",
   "entrypoints": {
     "meteor": [

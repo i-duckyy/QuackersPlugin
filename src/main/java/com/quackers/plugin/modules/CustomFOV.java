@@ -30,4 +30,3 @@ public class CustomFOV extends Module {
         event.fov = FOV.get();
     }
 }
-

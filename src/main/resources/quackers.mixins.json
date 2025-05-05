@@ -3,7 +3,13 @@
   "package": "com.quackers.plugin.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "meteor.GuiRendererAccessor"
+    "meteor.GuiRendererAccessor",
+    "quackers.QuackerPrefixMixin",
+    "quackers.MultiplayerScreenMixin",
+    "quackers.SessionMixin",
+    "quackers.InventoryScreenMixin",
+    "quackers.NoHitCooldownMixin",
+    "quackers.SplashTextMixin"
   ],
   "injectors": {
     "defaultRequire": 1

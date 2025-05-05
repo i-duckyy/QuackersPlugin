@@ -16,13 +16,6 @@ public class QuackersTab extends Tab {
     private static final Settings settings = new Settings();
     private static final SettingGroup sgSettings = settings.createGroup("Quackers Tools");
 
-    private static final Setting<Boolean> smallDuck = sgSettings.add(new BoolSetting.Builder()
-        .name("Small Duck [B]")
-        .description("Makes iDucky__ (the developer) smaller than usual.")
-        .defaultValue(false)
-        .build()
-    );
-
     private QuackersTab() {
         super("Quackers");
         MeteorClient.EVENT_BUS.subscribe(this);

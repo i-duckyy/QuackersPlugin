@@ -15,12 +15,9 @@ import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.network.packet.c2s.play.VehicleMoveC2SPacket;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 public class MaceKill extends Module {
     private final SettingGroup specialGroup = settings.createGroup("Values higher than 22 only work on Paper/Spigot [fixed soon]");
-    private final SettingGroup testing = settings.createGroup("Testing Options");
-    private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Boolean> maxPower = specialGroup.add(new BoolSetting.Builder()
         .name("Force Max Power (Paper/Spigot ONLY)")
@@ -28,7 +25,7 @@ public class MaceKill extends Module {
         .defaultValue(false)
         .build());
 
-    private final Setting<Integer> fallHeight = sgGeneral.add(new IntSetting.Builder()
+    private final Setting<Integer> fallHeight = specialGroup.add(new IntSetting.Builder()
         .name("Mace Power (Fall height)")
         .description("Simulates a fall from this distance")
         .defaultValue(22)
@@ -38,28 +35,10 @@ public class MaceKill extends Module {
         .visible(() -> !maxPower.get())
         .build());
 
-    private final Setting<Boolean> packetDisable = sgGeneral.add(new BoolSetting.Builder()
+    private final Setting<Boolean> packetDisable = specialGroup.add(new BoolSetting.Builder()
         .name("Disable When Blocked")
         .description("Does not send movement packets if the attack was blocked. (prevents death)")
         .defaultValue(true)
-        .build());
-
-    private final Setting<Boolean> noCooldown = testing.add(new BoolSetting.Builder()
-        .name("No Cooldown")
-        .description("Removes the cooldown between hits.")
-        .defaultValue(false)
-        .build());
-
-    private final Setting<Boolean> unlimitedPacketSpamming = testing.add(new BoolSetting.Builder()
-        .name("Attack Spam")
-        .description("Allows sending unlimited movement packets for faster execution.")
-        .defaultValue(false)
-        .build());
-
-    private final Setting<Boolean> teleportationWithMaceKill = testing.add(new BoolSetting.Builder()
-        .name("Teleport To Target")
-        .description("Teleports the player to the target upon using MaceKill.")
-        .defaultValue(false)
         .build());
 
     public MaceKill() {
@@ -69,10 +48,7 @@ public class MaceKill extends Module {
     private Vec3d previouspos;
 
     @EventHandler
-    private void onSendPacket(PacketEvent.Send event, float baseTime, CallbackInfoReturnable<Float> cir) {
-        if (noCooldown.get()){
-            cir.setReturnValue(1.0F);
-        }
+    private void onSendPacket(PacketEvent.Send event) {
         if (mc.player != null
             && mc.player.getInventory().getMainHandStack().getItem() == Items.MACE
             && event.packet instanceof PlayerInteractEntityC2SPacket packet) {
@@ -101,9 +77,7 @@ public class MaceKill extends Module {
                                 mc.player.getVehicle().setPosition(previouspos);
                                 mc.player.networkHandler.sendPacket(VehicleMoveC2SPacket.fromVehicle(mc.player.getVehicle()));
                             } else {
-                                for (int i = 0; i < (unlimitedPacketSpamming.get() ? Integer.MAX_VALUE : 4); i++) {
-                                    mc.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.OnGroundOnly(false, mc.player.horizontalCollision));
-                                }
+                                for (int i = 0; i < 4; i++) mc.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.OnGroundOnly(false, mc.player.horizontalCollision));
                                 double maxHeight = Math.min(mc.player.getY() + 22, mc.player.getY() + blocks);
                                 PlayerMoveC2SPacket movepacket = new PlayerMoveC2SPacket.PositionAndOnGround(mc.player.getX(), maxHeight, mc.player.getZ(), false, mc.player.horizontalCollision);
                                 PlayerMoveC2SPacket homepacket = new PlayerMoveC2SPacket.PositionAndOnGround(previouspos.getX(), previouspos.getY(), previouspos.getZ(), false, mc.player.horizontalCollision);
@@ -133,10 +107,6 @@ public class MaceKill extends Module {
                                 mc.player.networkHandler.sendPacket(homepacket);
                             }
                         }
-                    }
-
-                    if (teleportationWithMaceKill.get() && targetEntity != null) {
-                        mc.player.setPos(targetEntity.getX(), targetEntity.getY(), targetEntity.getZ());
                     }
                 }
             } catch (Exception e) {

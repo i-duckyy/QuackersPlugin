@@ -38,19 +38,19 @@ public class QuackersPlugin extends MeteorAddon {
         LOG.info("Cooking modules...");
         Modules.get().add(new AntiRun());
         Modules.get().add(new AntiSheild());
+        Modules.get().add(new AntiWhisper());
         Modules.get().add(new BetterBoats());
+        Modules.get().add(new BoatTweak());
         Modules.get().add(new CustomFOV());
         Modules.get().add(new DrSpin());
         Modules.get().add(new GameSettings());
-        Modules.get().add(new NoCollision());
-        Modules.get().add(new NoPause());
-        Modules.get().add(new SmoothDoors());
-        Modules.get().add(new AntiWhisper());
         Modules.get().add(new MaceKill());
+        Modules.get().add(new NoCollision());
         Modules.get().add(new NoHitCooldown());
-        Modules.get().add(new BoatTweak());
-        Modules.get().add(new OnlineSpammer());
+        Modules.get().add(new NoPause());
         Modules.get().add(new OfflineSpammer());
+        Modules.get().add(new OnlineSpammer());
+        Modules.get().add(new SmoothDoors());
         LOG.info("Modules cooked.");
 
         LOG.info("Cooking commands...");

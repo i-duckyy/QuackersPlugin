@@ -1,0 +1,59 @@
+[
+  {
+    "section": "Meteor Client",
+    "disciplines": [
+      {
+        "discipline": "",
+        "titles": [
+          {
+            "title": "Main Developers",
+            "names": [
+              "MineGame159",
+              "squidoodly",
+              "seasnail"
+            ]
+          },
+          {
+            "title": "Biggest Contributors",
+            "names": [
+              "gigglingbed",
+              "Wide-Cat",
+              "RacoonDog",
+              "C1oudburst",
+              "sbxte",
+              "supakeks",
+              "hexadecimal233",
+              "Big-Iron-Cheems",
+              "dakone22",
+              "Riveranda",
+              "DesiCow"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "section": "Quackers Plugin",
+    "disciplines": [
+      {
+        "discipline": "",
+        "titles": [
+          {
+            "title": "Developer",
+            "names": [
+              "iDucky__"
+            ]
+          },
+          {
+            "title": "Beta Testers",
+            "names": [
+              "Unable to fetch beta testers from QuackersAPI.",
+              "Please try again later"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

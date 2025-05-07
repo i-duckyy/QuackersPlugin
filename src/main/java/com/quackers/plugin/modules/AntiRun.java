@@ -26,7 +26,6 @@ import java.util.List;
 import static org.lwjgl.glfw.GLFW.GLFW_MOUSE_BUTTON_MIDDLE;
 
 public class AntiRun extends Module{
-
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Mode> targetMode = sgGeneral.add(new EnumSetting.Builder<Mode>()

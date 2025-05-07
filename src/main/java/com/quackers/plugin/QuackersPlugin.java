@@ -26,7 +26,7 @@ public class QuackersPlugin extends MeteorAddon {
     public static String BOOTSESSION;
     public static String NAME = "Quackers Plugin";
     public static String VER = "1.0.0";
-    public static String ACCESS_TYPE = "Early Access";
+    public static String ACCESS_TYPE = "Beta Testing";
     private static final String MOD_ID = "quackers-plugin";
     public static final Logger LOG = LogUtils.getLogger();
     public static final Category CATEGORY = new Category("Quackers", Items.TOTEM_OF_UNDYING.getDefaultStack());
@@ -49,6 +49,8 @@ public class QuackersPlugin extends MeteorAddon {
         Modules.get().add(new MaceKill());
         Modules.get().add(new NoHitCooldown());
         Modules.get().add(new BoatTweak());
+        Modules.get().add(new OnlineSpammer());
+        Modules.get().add(new OfflineSpammer());
         LOG.info("Modules cooked.");
 
         LOG.info("Cooking commands...");

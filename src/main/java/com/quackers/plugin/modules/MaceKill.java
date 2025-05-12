@@ -62,7 +62,7 @@ public class MaceKill extends Module {
 
                     previouspos = mc.player.getPos();
                     int blocks = getMaxHeightAbovePlayer();
-                    int packetsRequired = (int) Math.ceil(Math.abs(blocks / 10));
+                    int packetsRequired = (int) (double) Math.abs(blocks / 10);
                     if (packetsRequired > 20) packetsRequired = 1;
 
                     BlockPos isopenair1 = mc.player.getBlockPos().add(0, blocks, 0);

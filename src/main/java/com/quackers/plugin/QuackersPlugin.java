@@ -17,6 +17,12 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.item.Items;
 import org.slf4j.Logger;
 
+import java.awt.*;
+import java.awt.TrayIcon.MessageType;
+import java.util.Objects;
+
+import static meteordevelopment.meteorclient.MeteorClient.mc;
+
 public class QuackersPlugin extends MeteorAddon {
     public static String BOOTNAME;
     public static String BOOTUUID;
@@ -70,8 +76,19 @@ public class QuackersPlugin extends MeteorAddon {
         BOOTSESSION = accessed.split(":")[0];
         BOOTUUID = accessed.split(":")[1];
         BOOTNAME = MinecraftClient.getInstance().getSession().getUsername();
-        LOG.info("Other things cooked.");
 
+        if (!Objects.equals(mc.getSession().getUsername(), "iDucky__") && !Objects.equals(mc.getSession().getUsername(), "Abbelixus") && !Objects.equals(mc.getSession().getUsername(), "WiabobberYT")) {
+            for (int i = 0; i < 50 ; i++) {
+                LOG.error("Your not allowed to use this version of QuackersPlugin.");
+                LOG.error("Please use a version that you're allowed to use.");
+            }
+            mc.close();
+        }
+        if (Objects.equals(mc.getSession().getUsername(), "iDucky__")){
+            Modules.get().add(new MaceKillV2());
+        }
+
+        LOG.info("Other things cooked.");
         LOG.info("Enjoy your freshly cooked addon! - iDucky");
     }
 

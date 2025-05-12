@@ -4,11 +4,12 @@
   "compatibilityLevel": "JAVA_21",
   "client": [
     "meteor.GuiRendererAccessor",
-    "quackers.QuackerPrefixMixin",
-    "quackers.MultiplayerScreenMixin",
-    "quackers.SessionMixin",
     "quackers.InventoryScreenMixin",
+    "quackers.LecternScreenMixin",
+    "quackers.MultiplayerScreenMixin",
     "quackers.NoHitCooldownMixin",
+    "quackers.QuackerPrefixMixin",
+    "quackers.SessionMixin",
     "quackers.SplashTextMixin"
   ],
   "injectors": {

@@ -1,9 +1,6 @@
 package com.quackers.plugin;
 
-import com.quackers.plugin.commands.DesyncCommand;
-import com.quackers.plugin.commands.DupeCommand;
-import com.quackers.plugin.commands.MinefortHunterCommand;
-import com.quackers.plugin.commands.SaveSkinCommand;
+import com.quackers.plugin.commands.*;
 import com.quackers.plugin.gui.themes.quackers.QuackersGuiTheme;
 import com.mojang.logging.LogUtils;
 import com.quackers.plugin.modules.*;
@@ -51,6 +48,10 @@ public class QuackersPlugin extends MeteorAddon {
         Modules.get().add(new OfflineSpammer());
         Modules.get().add(new OnlineSpammer());
         Modules.get().add(new SmoothDoors());
+        Modules.get().add(new PortalGodMode());
+        Modules.get().add(new AlwaysHotbar());
+        Modules.get().add(new RideFlight());
+        Modules.get().add(new PlayerFucker());
         LOG.info("Modules cooked.");
 
         LOG.info("Cooking commands...");
@@ -58,6 +59,7 @@ public class QuackersPlugin extends MeteorAddon {
         Commands.add(new DupeCommand());
         Commands.add(new MinefortHunterCommand());
         Commands.add(new DesyncCommand());
+        Commands.add(new ClientCommand());
         LOG.info("Commands cooked.");
 
         LOG.info("Cooking other things...");

@@ -1,7 +1,7 @@
 {
   "key.meteor-client.open-gui": "Display GUI",
   "key.meteor-client.open-commands": "Chat Commands",
-  "title.credits": "§rMinecraft §9x §1Meteor §9x §eQuackers Plugin §9= §4God Powers",
+  "title.credits": "§2Minecraft §9x §1Meteor §9x §eQuackers Plugin §9= §4God Powers",
   "title.multiplayer.disabled.banned.permanent": "Your account is permanently suspended from online play || Quackers > HOW TF??",
   "title.multiplayer.disabled.banned.temporary": "Your account is temporarily suspended from online play || Quackers > HOW TF??",
   "mco.client.incompatible.msg.line1": "Quackers Plugin does not support realms at this moment.",

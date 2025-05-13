@@ -16,6 +16,7 @@ public class BetaTestersScreen extends WindowScreen {
     public void initWidgets() {
         WTable t = add(theme.table()).expandX().widget();
 
-        t.add(theme.label("None yet, message me on discord (i.ducky) to become a beta tester!"));
+        t.add(theme.label("WiabobberYT")); t.row();
+        t.add(theme.label("Abbelixus"));
     }
 }

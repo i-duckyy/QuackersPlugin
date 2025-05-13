@@ -21,7 +21,7 @@ public class QuackersPlugin extends MeteorAddon {
     public static final String ACCESS_TYPE = "Beta Testing";
     public static final String MOD_ID = "quackers-plugin";
     public static final String NAME = "Quackers Plugin";
-    public static final String VER = "1.0.0";
+    public static final String VER = "1.0.2-b";
     public static String BOOTNAME;
     public static String BOOTSESSION;
     public static String BOOTUUID;
@@ -41,6 +41,7 @@ public class QuackersPlugin extends MeteorAddon {
         Modules.get().add(new BoatTweak());
         Modules.get().add(new CustomFOV());
         Modules.get().add(new DrSpin());
+        Modules.get().add(new eGirlMode());
         Modules.get().add(new GameSettings());
         Modules.get().add(new MaceKill());
         Modules.get().add(new NoCollision());
@@ -52,6 +53,7 @@ public class QuackersPlugin extends MeteorAddon {
         Modules.get().add(new PortalGodMode());
         Modules.get().add(new RideFlight());
         Modules.get().add(new SmoothDoors());
+        Modules.get().add(new WhenDucksFly());
         LOG.info("Modules cooked.");
 
         LOG.info("Cooking commands...");

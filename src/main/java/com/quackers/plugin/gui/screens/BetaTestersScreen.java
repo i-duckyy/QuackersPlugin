@@ -14,7 +14,7 @@ public class BetaTestersScreen extends WindowScreen {
 
     @Override
     public void initWidgets() {
-        WTable t = add(theme.table()).expandX().widget();
+        WTable t = add(theme.table()).center().widget();
 
         t.add(theme.label("WiabobberYT")); t.row();
         t.add(theme.label("Abbelixus"));

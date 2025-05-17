@@ -14,7 +14,7 @@ public class HonorableMentionsScreen extends WindowScreen {
 
     @Override
     public void initWidgets() {
-        WTable t = add(theme.table()).expandX().widget();
+        WTable t = add(theme.table()).center().widget();
 
         t.add(theme.label("SalC1 - Got me into anarchy")); t.row();
         t.add(theme.label("FitMC - Also got me into anarchy")); t.row();

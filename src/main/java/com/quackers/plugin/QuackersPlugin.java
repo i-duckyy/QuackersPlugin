@@ -12,7 +12,6 @@ import meteordevelopment.meteorclient.gui.GuiThemes;
 import meteordevelopment.meteorclient.gui.tabs.Tabs;
 import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Modules;
-import net.minecraft.block.entity.SignText;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
@@ -21,10 +20,10 @@ import org.slf4j.Logger;
 public class QuackersPlugin extends MeteorAddon {
     public static final Identifier CAPE_TEXTURE = Identifier.of("stuff:cape.png");
     public static final Logger LOG = LogUtils.getLogger();
-    public static final String ACCESS_TYPE = "Beta Testing";
+    public static final String ACCESS_TYPE = "Beta Tester";
     public static final String MOD_ID = "quackers-plugin";
     public static final String NAME = "Quackers Plugin";
-    public static final String VER = "1.0.2-b";
+    public static final String VER = "1.1.4-b";
     public static String BOOTNAME;
     public static String BOOTSESSION;
     public static String BOOTUUID;
@@ -91,6 +90,7 @@ public class QuackersPlugin extends MeteorAddon {
         Modules.get().add(new AntiWhisper());
         Modules.get().add(new BetterBoats());
         Modules.get().add(new BoatTweak());
+        Modules.get().add(new BowInstaKill());
         Modules.get().add(new CustomFOV());
         Modules.get().add(new DrSpin());
         Modules.get().add(new eGirlMode());
@@ -113,6 +113,7 @@ public class QuackersPlugin extends MeteorAddon {
         Commands.add(new ClientCommand());
         Commands.add(new DesyncCommand());
         Commands.add(new DupeCommand());
+        Commands.add(new InventoryCheckCommand());
         Commands.add(new MinefortHunterCommand());
         Commands.add(new SaveSkinCommand());
     }

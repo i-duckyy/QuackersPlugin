@@ -36,14 +36,14 @@ public class QuackersTab extends Tab {
     }
 
     private final Setting<Boolean> spoofBrand = sgOptions.add(new BoolSetting.Builder()
-        .name("Quackers Brand")
+        .name("Quackers Rebrander")
         .description("Brands your client to 'QuackersPlugin'")
         .defaultValue(true)
         .build()
     );
 
     private final Setting<Boolean> quickBetterTooltips = sgOptions.add(new BoolSetting.Builder()
-        .name("Quick Better Tooltips")
+        .name("Fast Quick Better Tooltips")
         .description("Forces minecrafts better tooltips to be on.")
         .defaultValue(mc.options.hudHidden)
         .onChanged(this::quickBetterTooltips)
@@ -51,7 +51,7 @@ public class QuackersTab extends Tab {
     );
 
     private final Setting<Boolean> noArmSwing = sgOptions.add(new BoolSetting.Builder()
-        .name("No Arm Swing")
+        .name("Remove Arm Swing")
         .description("Removes arm swing.")
         .defaultValue(false)
         .build()

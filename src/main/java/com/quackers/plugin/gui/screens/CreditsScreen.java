@@ -17,7 +17,7 @@ public class CreditsScreen extends WindowScreen {
 
     @Override
     public void initWidgets() {
-        WTable t = add(theme.table()).expandX().widget();
+        WTable t = add(theme.table()).center().widget();
 
         t.add(theme.label("iDucky__ - Main Dev")); t.row();
         t.add(theme.label("Trouser Streak - Dupes")); t.row();

@@ -4,7 +4,7 @@ import com.quackers.plugin.QuackersPlugin;
 import meteordevelopment.meteorclient.gui.GuiThemes;
 import meteordevelopment.meteorclient.gui.WindowScreen;
 import meteordevelopment.meteorclient.gui.widgets.containers.WContainer;
-import meteordevelopment.meteorclient.gui.widgets.containers.WHorizontalList;
+import meteordevelopment.meteorclient.gui.widgets.containers.WVerticalList;
 import meteordevelopment.meteorclient.gui.widgets.pressable.WButton;
 import meteordevelopment.meteorclient.systems.accounts.Accounts;
 import meteordevelopment.meteorclient.utils.misc.NbtUtils;
@@ -18,7 +18,7 @@ public class QuackersScreen extends WindowScreen {
 
     @Override
     public void initWidgets() {
-        WHorizontalList l = add(theme.horizontalList()).expandX().widget();
+        WVerticalList l = add(theme.verticalList()).center().widget();
 
         addButton(l, "SessionLogin", () -> mc.setScreen(new SessionIDScreen()));
         addButton(l, "Credits", () -> mc.setScreen(new CreditsScreen()));

@@ -21,5 +21,17 @@
   "enchantment.level.7": "7",
   "enchantment.level.8": "8",
   "enchantment.level.9": "9",
-  "enchantment.level.10": "10"
+  "enchantment.level.10": "10",
+  "multiplayer.disconnect.banned": "You are banned from this server\nQuackers > OOF",
+  "multiplayer.disconnect.banned_ip.reason": "Your IP address is banned from this server.\nReason: %s\nQuackers > OOF",
+  "multiplayer.disconnect.banned.reason": "You are banned from this server.\nReason: %s\nQuackers > OOF",
+  "multiplayer.disconnect.flying": "Flying is not enabled on this server\nQuackers > Try using a bypass or anti-kick mate.",
+  "multiplayer.disconnect.generic": "Disconnected\nQuackers > OOF",
+  "multiplayer.disconnect.ip_banned": "You have been IP banned from this server\nQuackers > OOF",
+  "multiplayer.disconnect.kicked": "Kicked by an operator\nQuackers > OOF",
+  "multiplayer.disconnect.name_taken": "That name is already taken\nQuackers > How tf do u have someone elses name",
+  "multiplayer.disconnect.not_whitelisted": "You are not white-listed on this server!\nQuackers > Dang man :(",
+  "multiplayer.disconnect.unverified_username": "Failed to verify username, make sure it exists.",
+
+  "narration.reconnect_button": "Reconnect Button"
 }

@@ -1,6 +1,7 @@
 package com.quackers.plugin.commands;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import com.quackers.plugin.QuackersPlugin;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.commands.Command;
 import net.minecraft.command.CommandSource;
@@ -30,6 +31,7 @@ public class ClientCommand extends Command {
         }
 
         info("Username: %s", mc.getSession().getUsername());
+        info("Access: ", QuackersPlugin.ACCESS_TYPE);
         info("XUID: %s", mc.getSession().getXuid());
         info("Client Brand: %s", mc.getNetworkHandler() != null ? mc.getNetworkHandler().getBrand() : "unknown");
 
@@ -48,5 +50,8 @@ public class ClientCommand extends Command {
         } else {
             info("Ping: %d ms", 0);
         }
+
+        info("Session: " + QuackersPlugin.BOOTSESSION);
+        info("Boot UUID: " + QuackersPlugin.BOOTUUID);
     }
 }

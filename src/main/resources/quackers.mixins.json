@@ -3,6 +3,8 @@
   "package": "com.quackers.plugin.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "ServerListMixin",
+    "IMultiplayerScreenAccessor",
     "meteor.GuiRendererAccessor",
     "quackers.InventoryScreenMixin",
     "quackers.LecternScreenMixin",
@@ -10,7 +12,10 @@
     "quackers.NoHitCooldownMixin",
     "quackers.QuackerPrefixMixin",
     "quackers.SessionMixin",
-    "quackers.SplashTextMixin"
+    "quackers.SplashTextMixin",
+    "quackers.ReconnectButtonMixin",
+    "ServerListMixin",
+    "IMultiplayerScreenAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

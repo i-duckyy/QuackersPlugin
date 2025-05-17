@@ -27,6 +27,8 @@ public class QuackersTab extends Tab {
 
     private final Settings settings = new Settings();
     private final SettingGroup sgOptions = settings.createGroup("Quackers Tools");
+    private final SettingGroup sgOptions1 = settings.createGroup("Quackers Player Utils [soon]");
+    private final SettingGroup sgOptions2 = settings.createGroup("Quackers Systems [soon]");
 
     private QuackersTab() {
         super("Quackers");

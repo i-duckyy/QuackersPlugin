@@ -31,5 +31,7 @@
   "multiplayer.disconnect.kicked": "Kicked by an operator\nQuackers > OOF",
   "multiplayer.disconnect.name_taken": "That name is already taken\nQuackers > How tf do u have someone elses name",
   "multiplayer.disconnect.not_whitelisted": "You are not white-listed on this server!\nQuackers > Dang man :(",
-  "multiplayer.disconnect.unverified_username": "Failed to verify username, make sure it exists."
+  "multiplayer.disconnect.unverified_username": "Failed to verify username, make sure it exists.",
+
+  "narration.reconnect_button": "Reconnect Button"
 }

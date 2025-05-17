@@ -4,6 +4,8 @@ import com.mojang.authlib.GameProfile;
 import net.minecraft.client.MinecraftClient;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
+
 public class SetSession {
     public static String username = "";
     public static String accessToken = "";
@@ -22,6 +24,6 @@ public class SetSession {
     }
 
     public static GameProfile getGameProfile() {
-        return new GameProfile(getUuidOrNull(), username);
+        return new GameProfile(Objects.requireNonNull(getUuidOrNull()), username);
     }
 }

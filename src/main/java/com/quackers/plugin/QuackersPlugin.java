@@ -17,6 +17,10 @@ import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 
+import java.util.Objects;
+
+import static meteordevelopment.meteorclient.MeteorClient.mc;
+
 public class QuackersPlugin extends MeteorAddon {
     public static final Identifier CAPE_TEXTURE = Identifier.of("stuff:cape.png");
     public static final Logger LOG = LogUtils.getLogger();
@@ -56,16 +60,13 @@ public class QuackersPlugin extends MeteorAddon {
         LOG.warn("Checking if you are allowed to use this mod...");
         if (!Objects.equals(mc.getSession().getUsername(), "iDucky__")
             && !Objects.equals(mc.getSession().getUsername(), "Abbelixus")
-            && !Objects.equals(mc.getSession().getUsername(), "WiabobberYT")) {
+            && !Objects.equals(mc.getSession().getUsername(), "WiabobberYT")
+            && !Objects.equals(mc.getSession().getUsername(), "SpectroProto")) {
             for (int i = 0; i < 50; i++) {
                 LOG.error("Your not allowed to use this version of QuackersPlugin.");
                 LOG.error("Please use a version that you're allowed to use.");
             }
             mc.close();
-        }
-
-        if (Objects.equals(mc.getSession().getUsername(), "iDucky__")) {
-            Modules.get().add(new MaceKillV2());
         }
         */
 
@@ -112,7 +113,6 @@ public class QuackersPlugin extends MeteorAddon {
     public static void loadCommands(){
         Commands.add(new ClientCommand());
         Commands.add(new DesyncCommand());
-        Commands.add(new DupeCommand());
         Commands.add(new InventoryCheckCommand());
         Commands.add(new MinefortHunterCommand());
         Commands.add(new SaveSkinCommand());

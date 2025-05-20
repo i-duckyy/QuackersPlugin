@@ -5,6 +5,9 @@ import meteordevelopment.meteorclient.commands.Command;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.command.CommandSource;
 import net.minecraft.entity.Entity;
+import net.minecraft.text.Text;
+
+import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class DesyncCommand extends Command {
     private final MinecraftClient mc = MinecraftClient.getInstance();
@@ -12,37 +15,13 @@ public class DesyncCommand extends Command {
     private Entity entity = null;
 
     public DesyncCommand() {
-        super("desync", "Desyncs your riding entity from the server.");
+        super("leave", "Disconnect.", "kms", "bye", "rage-quit");
     }
 
     @Override
     public void build(LiteralArgumentBuilder<CommandSource> builder) {
         builder.executes(context -> {
-            assert mc.player != null && mc.world != null;
-            if (this.entity == null) {
-                if (mc.player.hasVehicle()) {
-                    this.entity = mc.player.getVehicle();
-
-                    mc.player.dismountVehicle();
-                    mc.world.removeEntity(this.entity.getId(), Entity.RemovalReason.UNLOADED_TO_CHUNK);
-
-                    info("Successfully desynced your vehicle");
-                } else {
-                    error("You are not riding an entity.");
-                }
-            } else {
-                if (!mc.player.hasVehicle()) {
-                    mc.world.addEntity(this.entity);
-                    mc.player.startRiding(this.entity, true);
-
-                    this.entity = null;
-
-                    info("Successfully resynced your vehicle");
-                } else {
-                    error("You are not riding another entity.");
-                }
-            }
-
+            mc.player.networkHandler.getConnection().disconnect(Text.of("Quackers Plugin disconnected you!"));
             return SINGLE_SUCCESS;
         });
     }

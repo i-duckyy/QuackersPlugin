@@ -1,8 +1,12 @@
 package com.quackers.plugin.mixin.quackers;
 
+import com.quackers.plugin.modules.InvUtils;
+import com.quackers.plugin.tabs.QuackersTab;
+import meteordevelopment.meteorclient.systems.modules.Modules;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.DisconnectedScreen;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
 import net.minecraft.client.gui.screen.recipebook.RecipeBookProvider;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -41,58 +45,51 @@ public abstract class InventoryScreenMixin extends HandledScreen<PlayerScreenHan
             .build()
         );
 
-        addDrawableChild(new ButtonWidget.Builder(Text.literal("Empty Inv"), button -> empty())
-            .position(380, 350)
-            .size(67, 20)
-            .build()
-        );
-
-        addDrawableChild(new ButtonWidget.Builder(Text.literal("Sort Inv"), button -> sortInventory())
-            .position(450, 350)
-            .size(67, 20)
-            .build()
-        );
-
-        addDrawableChild(new ButtonWidget.Builder(Text.literal("Mess Inv"), button -> messUp())
-            .position(520, 350)
-            .size(67, 20)
-            .build()
-        );
-
         addDrawableChild(new ButtonWidget.Builder(Text.literal("Paper Dupe"), button -> bookDupe())
             .position(500, 160)
             .size(67, 20)
             .build()
         );
+
+        if (Modules.get().isActive(InvUtils.class)){
+            addDrawableChild(new ButtonWidget.Builder(Text.literal("Empty Inv"), button -> empty())
+                .position(380, 350)
+                .size(67, 20)
+                .build()
+            );
+
+            addDrawableChild(new ButtonWidget.Builder(Text.literal("Sort Inv"), button -> sortInventory())
+                .position(450, 350)
+                .size(67, 20)
+                .build()
+            );
+
+            addDrawableChild(new ButtonWidget.Builder(Text.literal("Mess Inv"), button -> messUp())
+                .position(520, 350)
+                .size(67, 20)
+                .build()
+            );
+        }
     }
 
     @Unique
     private void dupe() {
-        MinecraftClient mc = MinecraftClient.getInstance();
-        String serverVersion = mc.getVersionType();
+        info("Attempting dupe exploit...");
 
-        if (!serverVersion.contains("1.17")) {
-            info("The server version isn't 1.17, the dupe won't work.");
+        Slot slot = handler.getSlot(0);
+        if (slot == null || !slot.hasStack()) {
+            info("No item in slot 0 to dupe.");
             return;
         }
 
-        info("Duping...");
-        if (!handler.slots.isEmpty()) {
-            Slot outputSlot = handler.slots.get(0);
-            if (outputSlot != null && outputSlot.hasStack()) {
-                assert mc.interactionManager != null;
-                mc.interactionManager.clickSlot(
-                    handler.syncId,
-                    outputSlot.id,
-                    0,
-                    SlotActionType.THROW,
-                    mc.player
-                );
-            } else {
-                info("No item found to dupe.");
-            }
-        }
+        onMouseClick(slot, slot.id, 0, SlotActionType.THROW);
+        onMouseClick(slot, slot.id, 0, SlotActionType.CLONE);
+        onMouseClick(slot, slot.id, 0, SlotActionType.PICKUP);
+        assert mc.player != null;
+        mc.player.closeScreen();
+        mc.player.networkHandler.getConnection().disconnect(Text.of("Duping!"));
     }
+
 
     @Unique
     private void empty() {

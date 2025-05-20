@@ -1,5 +1,6 @@
 package com.quackers.plugin.tabs;
 
+import com.quackers.plugin.utils.CapeManager;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.events.packets.PacketEvent;
 import meteordevelopment.meteorclient.events.world.TickEvent;
@@ -19,6 +20,7 @@ import net.minecraft.network.packet.c2s.common.CustomPayloadC2SPacket;
 import net.minecraft.network.packet.c2s.play.HandSwingC2SPacket;
 import net.minecraft.network.packet.s2c.play.EntityAnimationS2CPacket;
 import net.minecraft.util.Identifier;
+import java.util.UUID;
 
 import static com.quackers.plugin.settings.SetSession.mc;
 
@@ -27,14 +29,14 @@ public class QuackersTab extends Tab {
 
     private final Settings settings = new Settings();
     private final SettingGroup sgOptions = settings.createGroup("Quackers Tools");
-    private final SettingGroup sgOptions1 = settings.createGroup("Quackers Player Utils [soon]");
-    private final SettingGroup sgOptions2 = settings.createGroup("Quackers Systems [soon]");
+    private final SettingGroup sgOptions1 = settings.createGroup("Quackers Player Utils");
 
     private QuackersTab() {
         super("Quackers");
         MeteorClient.EVENT_BUS.subscribe(this);
     }
 
+    // Quackers Tools
     private final Setting<Boolean> spoofBrand = sgOptions.add(new BoolSetting.Builder()
         .name("Quackers Rebrander")
         .description("Brands your client to 'QuackersPlugin'")
@@ -56,6 +58,36 @@ public class QuackersTab extends Tab {
         .defaultValue(false)
         .build()
     );
+
+    // Quackers Player Utils
+    private final Setting<Boolean> invincibleClientSide = sgOptions1.add(new BoolSetting.Builder()
+        .name("Invincibility [cs]")
+        .description("Makes you invincible on the client side")
+        .defaultValue(false)
+        .build()
+    );
+
+    private final Setting<Boolean> noHungerClientSide = sgOptions1.add(new BoolSetting.Builder()
+        .name("No Hunger [cs]")
+        .description("Makes you not loose hunger on the client side")
+        .defaultValue(false)
+        .build()
+    );
+
+    @EventHandler
+    private void onTick(TickEvent.Pre event) {
+        if (invincibleClientSide.get()) {
+            assert mc.player != null;
+            mc.player.setHealth(20);
+        }
+
+        if (noHungerClientSide.get()) {
+            assert mc.player != null;
+            mc.player.getHungerManager().setSaturationLevel(20);
+            mc.player.getHungerManager().setFoodLevel(20);
+        }
+    }
+
 
     @EventHandler
     private void onPacketSend(PacketEvent.Send event) {

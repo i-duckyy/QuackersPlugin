@@ -17,12 +17,9 @@ import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 
-import java.util.Objects;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
-
 public class QuackersPlugin extends MeteorAddon {
-    public static final Identifier CAPE_TEXTURE = Identifier.of("stuff:cape.png");
+    public static final Identifier DEV_CAPE = Identifier.of("capes:dev_cape.png");
+    public static final Identifier BETA_CAPE = Identifier.of("capes:beta_cape.png");
     public static final Logger LOG = LogUtils.getLogger();
     public static final String ACCESS_TYPE = "Beta Tester";
     public static final String MOD_ID = "quackers-plugin";
@@ -96,6 +93,7 @@ public class QuackersPlugin extends MeteorAddon {
         Modules.get().add(new DrSpin());
         Modules.get().add(new eGirlMode());
         Modules.get().add(new GameSettings());
+        Modules.get().add(new InvUtils());
         Modules.get().add(new MaceKill());
         Modules.get().add(new NoCollision());
         Modules.get().add(new NoHitCooldown());

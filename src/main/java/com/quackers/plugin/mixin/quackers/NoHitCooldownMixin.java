@@ -1,3 +1,9 @@
+/*
+    Copyright - Quackers Plugin 2025
+    This file is part of the Quackers Plugin project.
+    Unauthorized use, distribution, or modification of this file without explicit permission is strictly prohibited and may be subject to DMCA takedown actions.
+*/
+
 package com.quackers.plugin.mixin.quackers;
 
 import com.quackers.plugin.modules.NoHitCooldown;

@@ -1,3 +1,9 @@
+/*
+    Copyright - Quackers Plugin 2025
+    This file is part of the Quackers Plugin project.
+    Unauthorized use, distribution, or modification of this file without explicit permission is strictly prohibited and may be subject to DMCA takedown actions.
+*/
+
 package com.quackers.plugin.gui.screens;
 
 import com.quackers.plugin.QuackersPlugin;
@@ -22,6 +28,7 @@ public class QuackersScreen extends WindowScreen {
 
         addButton(l, "SessionLogin", () -> mc.setScreen(new SessionIDScreen()));
         addButton(l, "Credits", () -> mc.setScreen(new CreditsScreen()));
+        addButton(l, "News", () -> mc.setScreen(new NewsScreen()));
     }
 
     private void addButton(WContainer c, String text, Runnable action) {

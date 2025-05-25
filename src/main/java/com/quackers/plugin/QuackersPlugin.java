@@ -1,3 +1,15 @@
+/*
+    Copyright - Quackers Plugin 2025
+    This file is part of the Quackers Plugin project.
+    Unauthorized use, distribution, or modification of this file without explicit permission is strictly prohibited and may be subject to DMCA takedown actions.
+*/
+
+/*
+    Copyright - Quackers Plugin 2025
+    This file is part of the Quackers Plugin project.
+    Unauthorized use, distribution, or modification of this file without explicit permission is strictly prohibited and may be subject to DMCA takedown actions.
+*/
+
 package com.quackers.plugin;
 
 import com.mojang.logging.LogUtils;
@@ -15,7 +27,7 @@ public class QuackersPlugin extends MeteorAddon {
     public static final String ACCESS_TYPE = "Public";
     public static final String MOD_ID = "quackers-plugin";
     public static final String NAME = "Quackers Plugin";
-    public static final String VER = "1.2.1";
+    public static final String VER = "1.2.4";
     public static String BOOTNAME;
     public static String BOOTSESSION;
     public static String BOOTUUID;

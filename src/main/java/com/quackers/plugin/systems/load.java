@@ -1,20 +1,35 @@
+/*
+    Copyright - Quackers Plugin 2025
+    This file is part of the Quackers Plugin project.
+    Unauthorized use, distribution, or modification of this file without explicit permission is strictly prohibited and may be subject to DMCA takedown actions.
+*/
+
 package com.quackers.plugin.systems;
 
 import com.quackers.plugin.commands.*;
 import com.quackers.plugin.modules.*;
 import com.quackers.plugin.modules.exploits.*;
 import com.quackers.plugin.tabs.QuackersTab;
+
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.commands.Commands;
 import meteordevelopment.meteorclient.gui.tabs.Tabs;
 import meteordevelopment.meteorclient.systems.modules.Modules;
+
 import static meteordevelopment.meteorclient.MeteorClient.LOG;
 import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 import java.util.Objects;
 
 public class load {
-    public static void modules(){
+    public static void modules() {
+        // Exploits
+        Modules.get().add(new BowInstaKill());
+        Modules.get().add(new CrashPrevention());
+        Modules.get().add(new FourbbJGhostTrack());
+        Modules.get().add(new FourjjBCoordExploit());
+        Modules.get().add(new MaceKill());
+
         // Main
         Modules.get().add(new AlwaysHotbar());
         Modules.get().add(new AntiRun());
@@ -23,6 +38,7 @@ public class load {
         Modules.get().add(new BetterBoats());
         Modules.get().add(new BoatTweak());
         Modules.get().add(new CustomFOV());
+        Modules.get().add(new DiscordLogger());
         Modules.get().add(new DrSpin());
         Modules.get().add(new eGirlMode());
         Modules.get().add(new GameSettings());
@@ -36,18 +52,11 @@ public class load {
         Modules.get().add(new PortalGodMode());
         Modules.get().add(new RideFlight());
         Modules.get().add(new SmoothDoors());
-        Modules.get().add(new WhenDucksFly());
         Modules.get().add(new WhatTheTweak());
-
-        //Exploit
-        Modules.get().add(new BowInstaKill());
-        Modules.get().add(new MaceKill());
-        Modules.get().add(new FourjjBCoordExploit());
-        Modules.get().add(new FourbbJGhostTrack());
-        Modules.get().add(new CrashPrevention());
+        Modules.get().add(new WhenDucksFly());
     }
 
-    public static void commands(){
+    public static void commands() {
         Commands.add(new ClientCommand());
         Commands.add(new DesyncCommand());
         Commands.add(new InventoryCheckCommand());
@@ -55,13 +64,13 @@ public class load {
         Commands.add(new SaveSkinCommand());
     }
 
-    public static void privacy(){
+    public static void privacy() {
         LOG.warn("Checking if you are allowed to use this mod...");
-        if (!Objects.equals(mc.getSession().getUsername(), "iDucky__")
-            && !Objects.equals(mc.getSession().getUsername(), "Abbelixus")
-            && !Objects.equals(mc.getSession().getUsername(), "WiabobberYT")
+        if (!Objects.equals(mc.getSession().getUsername(), "Abbelixus")
+            && !Objects.equals(mc.getSession().getUsername(), "BoyKisser12")
             && !Objects.equals(mc.getSession().getUsername(), "SpectroProto")
-            && !Objects.equals(mc.getSession().getUsername(), "BoyKisser12")) {
+            && !Objects.equals(mc.getSession().getUsername(), "WiabobberYT")
+            && !Objects.equals(mc.getSession().getUsername(), "iDucky__")) {
             for (int i = 0; i < 50; i++) {
                 LOG.error("Your not allowed to use this version of QuackersPlugin.");
                 LOG.error("Please use a version that you're allowed to use.");
@@ -70,7 +79,7 @@ public class load {
         }
     }
 
-    public static void tabs(){
+    public static void tabs() {
         Tabs.add(QuackersTab.INSTANCE);
         MeteorClient.EVENT_BUS.subscribe(QuackersTab.INSTANCE);
     }

@@ -53,7 +53,7 @@ public class eGirlMode extends Module {
     );
 
     public eGirlMode() {
-        super(QuackersPlugin.CATEGORY, "e-girl-mode", "Uwuifies your messages with max cuteness.");
+        super(QuackersPlugin.Main, "e-girl-mode", "Uwuifies your messages with max cuteness.");
     }
 
     @EventHandler

@@ -6,7 +6,7 @@ import meteordevelopment.meteorclient.systems.modules.Module;
 public class NoPause extends Module {
 
 	public NoPause() {
-		super(QuackersPlugin.CATEGORY, "no-pause", "Doesnt pause your game when you switch tab.");
+		super(QuackersPlugin.Main, "no-pause", "Doesnt pause your game when you switch tab.");
 		mc.options.pauseOnLostFocus = !isActive();
 	}
 

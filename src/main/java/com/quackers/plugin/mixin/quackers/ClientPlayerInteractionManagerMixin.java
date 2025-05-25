@@ -1,6 +1,6 @@
 package com.quackers.plugin.mixin.quackers;
 
-import com.quackers.plugin.modules.BowInstaKill;
+import com.quackers.plugin.modules.exploits.BowInstaKill;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import meteordevelopment.meteorclient.systems.modules.player.AntiHunger;
 import net.minecraft.client.network.ClientPlayerInteractionManager;

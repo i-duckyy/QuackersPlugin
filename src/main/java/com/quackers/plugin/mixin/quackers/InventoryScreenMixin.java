@@ -90,7 +90,6 @@ public abstract class InventoryScreenMixin extends HandledScreen<PlayerScreenHan
         mc.player.networkHandler.getConnection().disconnect(Text.of("Duping!"));
     }
 
-
     @Unique
     private void empty() {
         MinecraftClient mc = MinecraftClient.getInstance();

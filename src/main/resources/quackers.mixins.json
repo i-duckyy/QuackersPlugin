@@ -14,6 +14,7 @@
     "quackers.ReconnectButtonMixin",
     "quackers.InventoryScreenMixinBow",
     "quackers.ClientPlayerInteractionManagerMixin",
+    "quackers.TitleScreenMixin",
     "IMultiplayerScreenAccessor"
   ],
   "injectors": {

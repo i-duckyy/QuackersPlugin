@@ -12,6 +12,8 @@
   "mco.compatibility.downgrade": "Downgrade",
   "mco.compatibility.downgrade.description": "This world was last played in version %s; you are on version %s. Downgrading a world could cause corruption - we cannot guarantee that it will load or work.\n\nA backup of your world will be saved under \"World Backups\". Please restore your world if needed.",
   "mco.compatibility.incompatible.popup.title": "Incompatible version",
+  "mco.error.invalid.session.message": "Please try removing Quackers Plugin, or playing on vanilla.",
+  "mco.error.invalid.session.title": "Your client isnt compatible with Realms",
   "enchantment.level.1": "1",
   "enchantment.level.2": "2",
   "enchantment.level.3": "3",
@@ -32,6 +34,5 @@
   "multiplayer.disconnect.name_taken": "That name is already taken\nQuackers > How tf do u have someone elses name",
   "multiplayer.disconnect.not_whitelisted": "You are not white-listed on this server!\nQuackers > Dang man :(",
   "multiplayer.disconnect.unverified_username": "Failed to verify username, make sure it exists.",
-
   "narration.reconnect_button": "Reconnect Button"
 }

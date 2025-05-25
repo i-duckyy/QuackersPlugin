@@ -168,7 +168,7 @@ public class BetterBoats extends Module {
     private boolean wasInBoat = false;
 
     public BetterBoats() {
-        super(QuackersPlugin.CATEGORY, "better-boats", "Automatically controls the boat for you.");
+        super(QuackersPlugin.Main, "better-boats", "Automatically controls the boat for you.");
     }
 
     @Override

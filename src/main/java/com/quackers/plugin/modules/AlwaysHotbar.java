@@ -11,7 +11,7 @@ public class AlwaysHotbar extends Module {
     private boolean open;
 
     public AlwaysHotbar() {
-        super(QuackersPlugin.CATEGORY, "always-hotbar", "Allows you to scroll in your hotbar while having a screen opened.");
+        super(QuackersPlugin.Main, "always-hotbar", "Allows you to scroll in your hotbar while having a screen opened.");
     }
 
     @Override

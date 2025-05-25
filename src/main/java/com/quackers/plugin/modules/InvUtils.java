@@ -5,6 +5,6 @@ import meteordevelopment.meteorclient.systems.modules.Module;
 
 public class InvUtils extends Module {
     public InvUtils() {
-        super(QuackersPlugin.CATEGORY, "inv-utils", ".");
+        super(QuackersPlugin.Main, "inv-utils", ".");
     }
 }

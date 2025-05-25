@@ -18,7 +18,7 @@ public class WhatTheTweak extends Module {
     private final Random random = new Random();
 
     public WhatTheTweak() {
-        super(QuackersPlugin.CATEGORY, "what-the-tweak", "Randomly messes with your player stats and client.");
+        super(QuackersPlugin.Main, "what-the-tweak", "Randomly messes with your player stats and client.");
     }
 
     @EventHandler

@@ -41,7 +41,7 @@ public class RideFlight extends Module {
     );
 
     public RideFlight() {
-        super(QuackersPlugin.CATEGORY, "ride-flight", "Allows you to fly with any entity.");
+        super(QuackersPlugin.Main, "ride-flight", "Allows you to fly with any entity.");
     }
 
     @EventHandler

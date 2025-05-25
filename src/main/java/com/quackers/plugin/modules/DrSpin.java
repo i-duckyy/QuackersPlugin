@@ -25,7 +25,7 @@ public class DrSpin extends Module {
     );
 
     private int count = 0;
-    public DrSpin() {super(QuackersPlugin.CATEGORY, "dr-spin", "Makes you spin right round.");}
+    public DrSpin() {super(QuackersPlugin.Main, "dr-spin", "Makes you spin right round.");}
 
     @EventHandler
     public void onTick(TickEvent.Post event) {

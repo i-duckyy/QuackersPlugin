@@ -1,7 +1,6 @@
 package com.quackers.plugin.modules;
 
 import com.quackers.plugin.QuackersPlugin;
-import meteordevelopment.meteorclient.settings.BoolSetting;
 import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.meteorclient.events.render.GetFovEvent;
 import meteordevelopment.meteorclient.settings.IntSetting;
@@ -11,7 +10,7 @@ import meteordevelopment.orbit.EventHandler;
 
 public class CustomFOV extends Module {
     public CustomFOV() {
-        super(QuackersPlugin.CATEGORY, "custom-FOV", "Allows more customisation to the FOV.");
+        super(QuackersPlugin.Main, "custom-FOV", "Allows more customisation to the FOV.");
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();

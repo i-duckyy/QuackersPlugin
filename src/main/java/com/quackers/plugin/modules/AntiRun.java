@@ -61,7 +61,7 @@ public class AntiRun extends Module{
     );
 
     public AntiRun() {
-        super(QuackersPlugin.CATEGORY, "anti-run", "Stick to a player.");
+        super(QuackersPlugin.Main, "anti-run", "Stick to a player.");
     }
     private final List<Entity> targets = new ArrayList<>();
     Entity target = null;

@@ -13,7 +13,7 @@ public class PortalGodMode extends Module {
     private List<TeleportConfirmC2SPacket> packets;
 
     public PortalGodMode() {
-        super(QuackersPlugin.CATEGORY, "portal-god-mode", "Makes you invincible after leaving a nether portal.");
+        super(QuackersPlugin.Main, "portal-god-mode", "Makes you invincible after leaving a nether portal.");
     }
 
     @Override

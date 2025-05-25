@@ -65,7 +65,7 @@ public class WhenDucksFly extends Module {
     );
 
     public WhenDucksFly() {
-        super(QuackersPlugin.CATEGORY, "when-ducks-fly", "Fly like in creative mode. Only works on unprotected servers.");
+        super(QuackersPlugin.Main, "when-ducks-fly", "Fly like in creative mode. Only works on unprotected servers.");
     }
 
     @Override

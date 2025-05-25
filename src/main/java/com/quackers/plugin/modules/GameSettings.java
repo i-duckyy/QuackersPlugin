@@ -59,7 +59,7 @@ public class GameSettings extends Module {
     );
 
     public GameSettings() {
-        super(QuackersPlugin.CATEGORY, "game-settings", "Allows for easier access to Minecraft's settings and adds some tweaks.");
+        super(QuackersPlugin.Main, "game-settings", "Allows for easier access to Minecraft's settings and adds some tweaks.");
     }
 
     private void toggleHUD(Boolean b) {

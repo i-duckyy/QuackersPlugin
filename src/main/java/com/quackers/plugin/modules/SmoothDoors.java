@@ -18,7 +18,7 @@ public class SmoothDoors extends Module {
     boolean isInteracting = false;
 
     public SmoothDoors() {
-        super(QuackersPlugin.CATEGORY, "smooth-doors", "Open both doors with one interaction.");
+        super(QuackersPlugin.Main, "smooth-doors", "Open both doors with one interaction.");
     }
 
     @EventHandler

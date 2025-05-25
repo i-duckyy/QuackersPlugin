@@ -21,7 +21,7 @@ public class OfflineSpammer extends Module {
     private boolean running = false;
 
     public OfflineSpammer() {
-        super(QuackersPlugin.CATEGORY, "offline-spammer", "Spams a request to meteors API to make it look like there's many people offline.");
+        super(QuackersPlugin.Main, "offline-spammer", "Spams a request to meteors API to make it look like there's many people offline.");
     }
 
     @Override

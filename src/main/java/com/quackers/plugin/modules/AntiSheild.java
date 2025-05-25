@@ -34,7 +34,7 @@ public class AntiSheild extends Module {
     );
 
     public AntiSheild() {
-        super(QuackersPlugin.CATEGORY, "anti-sheild", "Attempts to teleport you behind enemies to bypass shields.");
+        super(QuackersPlugin.Main, "anti-sheild", "Attempts to teleport you behind enemies to bypass shields.");
     }
 
     @EventHandler

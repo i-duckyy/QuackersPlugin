@@ -1,6 +1,6 @@
 package com.quackers.plugin.mixin.quackers;
 
-import com.quackers.plugin.modules.BowInstaKill;
+import com.quackers.plugin.modules.exploits.BowInstaKill;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;

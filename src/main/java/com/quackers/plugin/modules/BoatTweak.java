@@ -26,7 +26,7 @@ public class BoatTweak extends Module {
     );
 
     public BoatTweak() {
-        super(QuackersPlugin.CATEGORY, "boat-tweak", "Kills people in a boat using funny packets. Patched in Minecraft 1.21.2");
+        super(QuackersPlugin.Main, "boat-tweak", "Kills people in a boat using funny packets. Patched in Minecraft 1.21.2");
     }
 
     @Override

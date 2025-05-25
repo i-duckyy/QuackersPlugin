@@ -77,7 +77,7 @@ public class PlayerFucker extends Module{
     );
 
     public PlayerFucker() {
-        super(QuackersPlugin.CATEGORY, "player-fucker", "Automatic Minecraft Sex RP.");
+        super(QuackersPlugin.Main, "player-fucker", "Automatic Minecraft Sex RP.");
     }
     private final List<Entity> targets = new ArrayList<>();
     String regex = "[A-Za-z0-9_]+";

@@ -38,7 +38,7 @@ public class NoCollision extends Module {
     // Constructor
 
     public NoCollision() {
-        super(QuackersPlugin.CATEGORY, "no-collision", "Removes block and world border collision client-side.");
+        super(QuackersPlugin.Main, "no-collision", "Removes block and world border collision client-side.");
     }
 
     // Canceling Collision

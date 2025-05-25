@@ -1,7 +1,7 @@
 package com.quackers.plugin.tabs;
 
-import com.quackers.plugin.utils.CapeManager;
 import meteordevelopment.meteorclient.MeteorClient;
+import static meteordevelopment.meteorclient.MeteorClient.mc;
 import meteordevelopment.meteorclient.events.packets.PacketEvent;
 import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.gui.GuiTheme;
@@ -20,9 +20,6 @@ import net.minecraft.network.packet.c2s.common.CustomPayloadC2SPacket;
 import net.minecraft.network.packet.c2s.play.HandSwingC2SPacket;
 import net.minecraft.network.packet.s2c.play.EntityAnimationS2CPacket;
 import net.minecraft.util.Identifier;
-import java.util.UUID;
-
-import static com.quackers.plugin.settings.SetSession.mc;
 
 public class QuackersTab extends Tab {
     public static final QuackersTab INSTANCE = new QuackersTab();
